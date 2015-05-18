@@ -53,7 +53,7 @@ done("initValue").andThen(...).andthen(y => {... done("final result")}).result
     a Stackless value:
 ```scala
 def stacklessFunction: Stackless[String] = ???
-stacklessFunction.andThen(str => /* some computation using str */).result
+stacklessFunction.andThen(str => /* some computation using str */ ...).result
 ```
 
  - **delayed**\[A] (thunk: ⇒ Stackless[A]):
@@ -117,7 +117,7 @@ def breadthFirstB(acc: List[Seq[StringOrInt]],
 }
 
 breadthFirstA(Nil, Seq(data))
-/* yield to => List(
+/* yields to => List(
                  List("root"),
                  List(1, 0),
                  List("a", "b", "x0"),
