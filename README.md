@@ -28,7 +28,7 @@ import Stackless._
 
 Here are the main methods of Stackless:
 
- - **done**[A] (value: A): Builds a constant Stackless value. Useful to start and to end a 
+ - **done**\[A] (value: A): Builds a constant Stackless value. Useful to start and to end a 
     Stackless computation. _Note:_ **done** is implicit, most of the time you can omit it and 
     use simple values instead. 
 
@@ -41,7 +41,7 @@ done("initValue").andThen(...).andthen(y => {... done("final result")}).result
  - Stackless.**result**:
     Launches the **Stackless** runtime and returns the result of the computation.  
     
- - Stackless.**andThen**[A] (f: B ⇒ Stackless[A]):
+ - Stackless.**andThen**\[A] (f: B ⇒ Stackless[A]):
     Add a new step to a Stackless chain. When `.result` is called, `f` receives the result
     of the previous computation. Its result type is `Stackless`, it can either be:    
    
@@ -56,7 +56,7 @@ def stacklessFunction: Stackless[String] = ???
 stacklessFunction.andThen(str => /* some computation using str */).result
 ```
 
- - **delayed**[A] (thunk: ⇒ Stackless[A]):
+ - **delayed**\[A] (thunk: ⇒ Stackless[A]):
     Build a delayed Stackless value. It is semantically equivalent to 
     `done(()).andThen(_ ⇒ thunk)`, however it has a optimised implementation.
 
