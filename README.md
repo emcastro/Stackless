@@ -11,11 +11,16 @@ and does not required prior knowledge – reading the [Usage](#usage) section is
 
 ## Setting up
 
-The library is not yet published on Ivy repositories. To use it, just copy the `Stackless.java`
-file into your project in the `emcastro.stackless` package.
+The library is not yet published on public Ivy repositories. You can still publish it locally:
 
-You can clone the _github_ project locally, and run the tests in the SBT console or in
-IntellijIDEA.
+ 1. Clone the project; 
+ 2. Run `sbt`, execute the `publishLocal` command;
+ 3. Add `libraryDependencies += "emcastro" %% "stackless" % "0.5"` in your `build.sbt`.
+
+Feel free to hack the [tests](src/test/scala/emcastro/stackless/StacklessTest.scala) of the project.
+
+As the project is very small, you can also just copy the `Stackless.java` file into the 
+`emcastro.stackless` package of your project.
 
 
 ## Quick start
